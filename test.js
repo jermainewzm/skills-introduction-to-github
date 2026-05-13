@@ -7,7 +7,7 @@ exports.homeGet = async (req, res) => {
     // Retrieve the cart from the session
     // Pass the items and cart to the shop template for display
     try {
-        const items = await Item.find()
+        const items = await Item.find({ID:id})
         const cart = req.session.cart
 
         res.render("shop", {items,cart})
